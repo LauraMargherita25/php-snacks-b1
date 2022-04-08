@@ -52,10 +52,39 @@
         $age = $_GET["eta"];
 
         if (strlen($name) > 3 && is_numeric($age) == true && strpos($eMail, "@", 1) !== false && strpos($eMail, ".", 1) !== false) {
-            echo "<p>ok</p>";
+            echo "<p>Accesso riuscito</p>";
         } else {
-            echo "<p>ko</p>";
+            echo "<p>Accesso negato</p>";
         }
+
+
+
+
+
+        /* Snack 4
+        Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta */
+
+        $arrNum = [];
+        
+        // for ($i=0; $i < 15; $i++) { 
+            
+        //     $num = rand(1, 100);
+        //     // $arrNum[] = "$num";
+        //     if (in_array($num, $arrNum) === false) {
+        //         $arrNum[] = "$num";
+        //     } else {
+
+        //     }
+        // }
+
+        do {
+            $num = rand(1, 100);
+            if (in_array($num, $arrNum) === false) {
+                $arrNum[] = "$num";
+            }
+        } while (count($arrNum) <= 15);
+
+        var_dump($arrNum)
     ?>
         <br/>
         <br/>
