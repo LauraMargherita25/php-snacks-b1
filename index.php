@@ -7,10 +7,12 @@
     <title>php-snacks-b1</title>
 </head>
 <body>
-    <!-- Snack 1
-    Creiamo un array contenente le partite di basket di un’ipotetica tappa del calendario. Ogni array avrà una squadra di casa e una squadra ospite, punti fatti dalla squadra di casa e punti fatti dalla squadra ospite. Stampiamo a schermo tutte le partite con questo schema.
-    Olimpia Milano - Cantù | 55-60 -->
+    <!--  -->
     <?php
+        /* Snack 1
+        Creiamo un array contenente le partite di basket di un’ipotetica tappa del calendario. Ogni array avrà una squadra di casa e una squadra ospite, punti fatti dalla squadra di casa e punti fatti dalla squadra ospite. Stampiamo a schermo tutte le partite con questo schema.
+        Olimpia Milano - Cantù | 55-60 */
+
         $arrPartite = [
             [
                 "casa" => [
@@ -36,10 +38,40 @@
 
         for ($i = 0; $i < count($arrPartite); ++$i) {
             echo "The results are: </br>". $arrPartite[$i]['casa']['nome'] . " - ". $arrPartite[$i]['ospite']['nome'] . " | " . $arrPartite[$i]['casa']['punti'] . " - " . $arrPartite[$i]['ospite']['punti'] . "</br>";
-          } 
-    ?>
+        } 
 
-    <!-- <p>risultato: <?php echo $arrPartite[0]["casa"]["nome"] ?> - <?php echo $arrPartite[0]["ospite"]["nome"] ?> | <?php echo $arrPartite[0]["casa"]["punti"] ?> - <?php echo $arrPartite[0]["ospite"]["punti"] ?></p> -->
+
+
+
+
+        /* Snack 2
+        Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” */
+
+        $name = $_GET["nome"];
+        $eMail = $_GET["email"];
+        $age = $_GET["eta"];
+
+        if (strlen($name) > 3 && is_numeric($age) == true && strpos($eMail, "@", 1) !== false && strpos($eMail, ".", 1) !== false) {
+            echo "<p>ok</p>";
+        } else {
+            echo "<p>ko</p>";
+        }
+    ?>
+        <br/>
+        <br/>
+        <form action="" method="get">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome">
+
+            <label for="email">E-mail:</label>
+            <input type="text" name="email" id="email">
+
+            <label for="eta">Età:</label>
+            <input type="text" name="eta" id="eta">
+
+            <input type="submit">
+
+        </form>
 </body>
 </html>
 
