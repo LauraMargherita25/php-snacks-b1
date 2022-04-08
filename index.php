@@ -21,10 +21,25 @@
                     "nome" => "Cantù",
                     "punti" => "60",
                 ]
-            ]
-        ]
+            ],
+            [
+                "casa" => [
+                    "nome" => "Genova",
+                    "punti" => "55",
+                ],
+                "ospite" =>[
+                    "nome" => "Roma",
+                    "punti" => "60",
+                ]
+            ],
+        ];
+
+        for ($i = 0; $i < count($arrPartite); ++$i) {
+            echo "The results are: </br>". $arrPartite[$i]['casa']['nome'] . " - ". $arrPartite[$i]['ospite']['nome'] . " | " . $arrPartite[$i]['casa']['punti'] . " - " . $arrPartite[$i]['ospite']['punti'] . "</br>";
+          } 
     ?>
 
-    <p>risultato: <?php echo $arrPartite[0]["casa"]["nome"] ?> - <?php echo $arrPartite[0]["ospite"]["nome"] ?> | <?php echo $arrPartite[0]["casa"]["punti"] ?> - <?php echo $arrPartite[0]["ospite"]["punti"] ?></p>
+    <!-- <p>risultato: <?php echo $arrPartite[0]["casa"]["nome"] ?> - <?php echo $arrPartite[0]["ospite"]["nome"] ?> | <?php echo $arrPartite[0]["casa"]["punti"] ?> - <?php echo $arrPartite[0]["ospite"]["punti"] ?></p> -->
 </body>
 </html>
+
